@@ -1,0 +1,194 @@
+{
+  "info": {
+    "name": "Hospital Project API",
+    "_postman_id": "12345678-1234-1234-1234-123456789012",
+    "description": "Collection for testing Hospital Project APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Admin Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/admin/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "admin",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Patient",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODM3ZTE5ODAzMmYxY2FiMjIzZjRiNCIsImlhdCI6MTczNjY3MTI1NCwiZXhwIjoxNzM2Njc0ODU0fQ.viuWqTC1e6ZTk4f3SMcb3NLJV7t17bYtpV86wBS2klc"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"diseases\": [\"Diabetes\"],\n  \"allergies\": [\"Peanuts\"],\n  \"roomNumber\": 101,\n  \"bedNumber\": 1,\n  \"floorNumber\": 1,\n  \"age\": 45,\n  \"gender\": \"Male\",\n  \"contactInfo\": \"1234567890\",\n  \"emergencyContact\": \"0987654321\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/patients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "patients"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Patients",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODM3ZTE5ODAzMmYxY2FiMjIzZjRiNCIsImlhdCI6MTczNjY3MTI1NCwiZXhwIjoxNzM2Njc0ODU0fQ.viuWqTC1e6ZTk4f3SMcb3NLJV7t17bYtpV86wBS2klc"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5001/api/patients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "patients"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Delivery Personnel",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODM3ZTE5ODAzMmYxY2FiMjIzZjRiNCIsImlhdCI6MTczNjY3MTI1NCwiZXhwIjoxNzM2Njc0ODU0fQ.viuWqTC1e6ZTk4f3SMcb3NLJV7t17bYtpV86wBS2klc"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"contactInfo\": \"1234567890\",\n  \"otherDetails\": \"Details\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/pantry/delivery-personnel",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "pantry",
+            "delivery-personnel"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Assign Meal Box to Delivery Personnel",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODM3ZTE5ODAzMmYxY2FiMjIzZjRiNCIsImlhdCI6MTczNjY3MTI1NCwiZXhwIjoxNzM2Njc0ODU0fQ.viuWqTC1e6ZTk4f3SMcb3NLJV7t17bYtpV86wBS2klc"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mealBoxId\": \"{{mealBoxId}}\",\n  \"personnelId\": \"{{personnelId}}\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/pantry/assign-meal",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "pantry",
+            "assign-meal"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Mark Delivery as Completed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ODM3ZTE5ODAzMmYxY2FiMjIzZjRiNCIsImlhdCI6MTczNjY3MTI1NCwiZXhwIjoxNzM2Njc0ODU0fQ.viuWqTC1e6ZTk4f3SMcb3NLJV7t17bYtpV86wBS2klc"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mealBoxId\": \"{{mealBoxId}}\",\n  \"notes\": \"Delivered successfully\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/delivery/complete",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "delivery",
+            "complete"
+          ]
+        }
+      }
+    }
+  ]
+}
